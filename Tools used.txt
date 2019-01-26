@@ -1,0 +1,4 @@
+ipython
+Atom
+https://www.pythonanywhere.com/user/spatole/consoles/11396622/
+jupyter notebook

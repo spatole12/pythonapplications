@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Shivani Patole</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Shivani Patole</h1>
+          <p class="lead text-muted">Computer Science graduate seeking Summer Internship</p>
+          <p>
+            <a href="www.linkedin.com/in/shivanipatole" class="btn btn-primary my-2">Linked.in</a>
+            <a href="https://github.com/spatole12" class="btn btn-primary my-2">GitHub</a>
+            <a href="mailto:spatole@stevens.edu" class="btn btn-primary my-2">Email me</a>
+          </p>
+          <img src="{% static '2017-02-06-14-54-56-780.jpg' %}" height=300></img>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+
+            {% for job in jobs.all %}
+
+            <div class="col-md-4">
+              <a href="{% url 'detail' job.id %}">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="{{job.image.url}}">
+                <div class="card-body">
+                  <p class="card-text">{{ job.summary }}</p>
+                  </div>
+                </div>
+                </a>
+              </div>
+
+
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}" ></script>
+<script src="{% static 'js/bootstrap.min.js'%}" ></script>
+  </body>
+</html>
